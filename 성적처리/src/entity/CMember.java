@@ -1,7 +1,9 @@
 package entity;
 
+import java.io.Serializable;
+
 // Entity class or Value class
-public class CMember {
+public class CMember implements Serializable{
 	// attributes
 	private String userID, password;
 	
@@ -16,8 +18,6 @@ public class CMember {
 	public String getPassword() {return password;}
 	public void setPassword(String password) {this.password = password;}
 	
-	public void print() {
-		System.out.println("»ç¿ëÀÚ ID: "+userID);
-		System.out.println("Password: "+password);
-	}
+
+	
 }
