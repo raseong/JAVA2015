@@ -20,7 +20,8 @@ import entity.CMember;
 public class CMain {
 
 	public static void main(String[] args) {
-		// Login
+		// Login 
+		// ¼öÁ¤
 		CLoginView 	loginView = new CLoginView();
 		CMember member = loginView.login();
 		CLoginControl loginControl = new CLoginControl();
