@@ -1,9 +1,9 @@
 package entity;
 
-import java.io.Serializable;
+import java.util.Scanner;
 
 // Entity class or Value class
-public class CMember implements Serializable{
+public class CMember extends CEntity {
 	// attributes
 	private String userID, password;
 	
@@ -18,6 +18,21 @@ public class CMember implements Serializable{
 	public String getPassword() {return password;}
 	public void setPassword(String password) {this.password = password;}
 	
-
-	
+	public void print() {
+		System.out.println("»ç¿ëÀÚ ID: "+userID);
+		System.out.println("Password: "+password);
+	}
+	@Override
+	public boolean read(Scanner scanner) {
+		this.userID = scanner.next();
+		this.password = scanner.next();
+		if(scanner.hasNext())
+			return true;
+		else
+			return false;
+	}
+	@Override
+	public void write() {
+		
+	}
 }

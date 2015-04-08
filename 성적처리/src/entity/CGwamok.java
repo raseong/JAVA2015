@@ -1,9 +1,9 @@
 package entity;
 
+import java.util.Scanner;
 import java.io.Serializable;
 
-public class CGwamok implements Serializable{
-	private static final long serialVersionUID = 1L;
+public class CGwamok extends CEntity {
 	// Attribute
 	private int ID;
 	private String name;
@@ -15,4 +15,12 @@ public class CGwamok implements Serializable{
 	public void setName(String name) {this.name = name;}
 	public int getHakjeom() {return hakjeom;}
 	public void setHakjeom(int hakjeom) {this.hakjeom = hakjeom;}
+	@Override
+	public void read(Scanner scanner) {
+		
+	}
+	@Override
+	public void write() {
+		
+	}
 }

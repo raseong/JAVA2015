@@ -1,48 +1,24 @@
 package 성적처리;
 
-
-
-import java.io.IOException;
-
-import view.CGangjwaView;
-import view.CGwamokView;
 import view.CLoginView;
-import DAOs.DAO;
-import control.CGangjwaControl;
-import control.CGwamokControl;
+import DAOs.IDAO;
+import DAOs.TextDAO;
 import control.CLoginControl;
-import entity.CGangjwa;
-import entity.CGwamok;
-import entity.CMember;
 
 public class CMain {
 
 	public static void main(String[] args) {
-		// Login 
-		// 수정
-		CLoginView 	loginView = new CLoginView();
-		CMember member = loginView.login();
+		// create objects
+		CLoginView loginView = new CLoginView();
 		CLoginControl loginControl = new CLoginControl();
-		member = loginControl.login(member);
-		DAO memberDAO = new DAO();
-		memberDAO.write(member,"member");
-		member = (CMember) memberDAO.read("member");
-		// 과목개설
-		CGwamokView gwamokView = new CGwamokView();
-		CGwamok gwamok = gwamokView.getGwamok();
-		CGwamokControl gwamokControl = new CGwamokControl();
-		gwamok = gwamokControl.processGwamok(gwamok);
-		DAO gwamokDAO = new DAO();
-		gwamokDAO.write(gwamok,"gwamok");
-		gwamok = (CGwamok) gwamokDAO.read("gwamok");
-		// 강좌개설
-		CGangjwaView gangjwaView = new CGangjwaView();
-		CGangjwa gangjwa = gangjwaView.getGangjwa();
-		CGangjwaControl gangjwaControl = new CGangjwaControl();
-		gangjwa = gangjwaControl.processGangjwa(gangjwa);
-		DAO gangjwaDAO = new DAO();
-		gangjwaDAO.write(gangjwa,"gangjwa");
-		gangjwa = (CGangjwa) gangjwaDAO.read("gwamok");
+		IDAO memberDAO = new TextDAO();
+		
+		// associates
+		loginView.setControl(loginControl);
+		loginControl.setDao(memberDAO);
+		
+		// start login
+		loginView.login();
 	}
 
 }
