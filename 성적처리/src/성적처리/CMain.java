@@ -8,17 +8,19 @@ import control.CLoginControl;
 public class CMain {
 
 	public static void main(String[] args) {
-		// create objects
-		CLoginView loginView = new CLoginView();
-		CLoginControl loginControl = new CLoginControl();
-		IDAO memberDAO = new TextDAO();
-		
-		// associates
-		loginView.setControl(loginControl);
-		loginControl.setDao(memberDAO);
-		
-		// start login
-		loginView.login();
+		// Login
+				// create objects
+				CLoginView loginView = new CLoginView();
+			
+				CLoginControl loginControl = new CLoginControl();
+			//
+				IDAO dao = new TextDAO();
+				//association
+				loginView.setControl(loginControl);
+				loginControl.setDao(dao);
+				// start login
+				loginView.login();
+	
 	}
-
+ 
 }

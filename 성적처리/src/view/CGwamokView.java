@@ -2,7 +2,7 @@ package view;
 
 import entity.CGwamok;
 
-public class CGwamokView {
+public class CGwamokView extends CView{
 
 	public CGwamok getGwamok() 
 	{
